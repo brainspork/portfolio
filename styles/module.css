@@ -36,6 +36,7 @@
   text-align: center;
   top: 0;
   font-size: 1.5em;
+  color: white;
 }
 
 .project-lable button{
@@ -46,7 +47,8 @@
   background: none;
   font-size: 1em;
   text-align: center;
-  bottom: 5%;
+  bottom: 0;
+  color: white;
 }
 
 .project-label{
