@@ -16,6 +16,7 @@
 }
 
 .hero{
+  overflow: hidden;
   width:95%;
   top:0;
   margin: 0 2%;
@@ -39,6 +40,13 @@
 .about{
   top:20em;
   margin: 2% 2%;
+}
+
+.footer-link{
+  position: absolute;
+  top: 30%;
+  right: 2%;
+  font-size: 1.5em;
 }
 
 @media only screen and (min-width: 640px){
@@ -117,6 +125,18 @@
   .about p{
     margin-top:2%;
     font-size:1.25em;
-    text-indent:5%;
+  }
+
+  footer div{
+    max-width: 960px;
+    margin:0 auto;
+  }
+
+  footer p{
+    left: 0;
+  }
+
+  .footer-link{
+    right:0;
   }
 }

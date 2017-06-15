@@ -16,6 +16,7 @@ Proj.prototype.toHtml = function(){
   $newProject.addClass('project-container');
   $newProject.find('.screen-shot').attr('src', this.path);
   $newProject.find('h4').html(this.name);
+  console.log($newProject);
   return $newProject;
 };
 
