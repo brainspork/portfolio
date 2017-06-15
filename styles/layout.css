@@ -186,6 +186,10 @@
     margin-right: 0;
   }
 
+  .project-container:hover .project-label{
+    height: 100%;
+  }
+
   .about p{
     margin-top:2%;
     font-size:1.25em;

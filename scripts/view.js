@@ -18,14 +18,6 @@ pageView.handleHero = function(){
 pageView.changeHero = function(){
   var $hero = $('.hero');
   var $arrow = $('.hero-arrow');
-  $arrow.on('click', function(){
-    var $curr = $hero.attr('data-index');
-    console.log($curr);
-    if($(this) + ':has(#left)'){
-      $hero.html(animations[$curr - 1]);
-    }
-  })
-
 }
 
 $(document).ready(function(){
