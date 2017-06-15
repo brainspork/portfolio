@@ -5,12 +5,6 @@
   font-size: 2em;
 }
 
-.hero p{
-  text-align:center;
-  margin-top: 2em;
-  font-size: 2em;
-}
-
 .projects h3{
   font-size:2em;
 }
@@ -35,25 +29,16 @@
   width:100%;
   text-align: center;
   top: 0;
-  font-size: 1.5em;
+  font-size: 10vw;
 }
 
-.project-lable button{
-  display: block;
+.project-lable p{
   position: absolute;
-  border: none;
   width:100%;
-  background: none;
-  font-size: 1em;
+  font-size: 5vw;
   text-align: center;
-  bottom: 0;
+  bottom: 1vw;
   color: white;
-}
-
-.project-label{
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 25%;
 }
 
 .about h3{
@@ -62,4 +47,26 @@
 
 .template{
   display:none;
+}
+
+@media only screen and (min-width: 640px){
+  .project-lable:hover{
+    height: 100%;
+    transition: 350ms all;
+  }
+
+  .project-lable h4{
+    font-size: 3vw;
+    transition: none;
+  }
+
+  .project-lable p{
+    display: none;
+    cursor: pointer;
+    font-size: 2vw;
+  }
+
+  .project-lable:hover p{
+    display: block;
+  }
 }

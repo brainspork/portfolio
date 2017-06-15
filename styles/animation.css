@@ -4,19 +4,15 @@
 
 #backone, #backtwo{
   position: relative;
+  width:50%;
+  height:100%;
 }
 
 #backone{
-  position:relative;
-  width:50%;
-  height:100%;
   background:black;
 }
 
 #backtwo{
-  position:relative;
-  width:50%;
-  height:100%;
   background:white;
   float:right;
 }
