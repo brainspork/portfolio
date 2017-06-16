@@ -36,7 +36,6 @@
   text-align: center;
   top: 0;
   font-size: 1.5em;
-  color: white;
 }
 
 .project-lable button{
@@ -59,12 +58,6 @@
 
 .about h3{
   font-size: 2em;
-}
-
-.about p{
-  margin-top:2%;
-  font-size:1.25em;
-  text-indent:15%;
 }
 
 .template{

@@ -19,9 +19,6 @@ Proj.prototype.toHtml = function(){
   return $newProject;
 };
 
-Proj.prototype.loadNewPage = function(page){
-};
-
 rawData.forEach(function(raw){
   projects.push(new Proj(raw));
 });
