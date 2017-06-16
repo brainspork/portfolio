@@ -10,6 +10,12 @@ pageView.handleMainNav = function(){
   });
 }
 
+pageView.handleHero = function(){
+  var $hero = $('.hero');
+  $hero.html(animations[0]);
+}
+
 $(document).ready(function(){
   pageView.handleMainNav();
+  // pageView.handleHero();
 });
