@@ -31,21 +31,42 @@
   background-color: #888;
 }
 
+.change-animation{
+  width: 95%;
+  height:3em;
+  margin: 2%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border:1px solid white;
+}
+
 .hero-arrow{
-  position:relative;
-  display:inline-block;
-  width: 10%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  width:10%;
+  height:100%;
+}
+
+.hero-arrow p{;
+  display: inline-block;
+  font-size: 2em;
 }
 
 #left{
-  left: 0;
+  float: left;
 }
 
 #right{
-  right: 0;
+  float: right;
+}
+
+#left p{
+  float: left;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+#right p{
+  float: right;
+  margin-right: 10%;
+  margin-top: 10%;
 }
 
 .projects{
@@ -147,9 +168,13 @@
   }
 
   .hero-arrow p{
-    text-align:center;
-    margin-top: 2em;
-    font-size: 2em;
+    color: white;
+  }
+
+  .change-animation{
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .project-container{

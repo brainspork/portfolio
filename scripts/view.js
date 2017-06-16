@@ -12,10 +12,24 @@ pageView.handleMainNav = function(){
 
 pageView.handleHero = function(){
   var $hero = $('.hero');
-  $hero.html(animations[0]);
+  $hero.append(animations[0]);
+}
+
+pageView.changeHero = function(){
+  var $hero = $('.hero');
+  var $arrow = $('.hero-arrow');
+  $arrow.on('click', function(){
+    var $curr = $hero.attr('data-index');
+    console.log($curr);
+    if($(this) + ':has(#left)'){
+      $hero.html(animations[$curr - 1]);
+    }
+  })
+
 }
 
 $(document).ready(function(){
   pageView.handleMainNav();
-  // pageView.handleHero();
+  pageView.handleHero();
+  pageView.changeHero();
 });
