@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="styles/animation.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="icon" type="image/x-icon" href="img/x.png">
+    <script id="project-template" type="text/x-handlebars-template">
+      <li class="project-container">
+        <img class="screen-shot" src="{{path}}">
+        <div class="project-lable">
+          <h4>{{name}}</h4>
+          <p>Read More</p>
+        </div>
+      </li>
+    </script>
   </head>
   <body>
     <header>
@@ -41,14 +50,8 @@
       <section id="projects" class="content">
         <section class="projects">
           <h3>Projects</h3>
-          <ul class = "project-controller">
-            <li class="template">
-                <img class="screen-shot" src="http://placehold.it/300x300">
-                <div class="project-lable">
-                  <h4>Project 1</h4>
-                  <p>Read More</p>
-                </div>
-            </li>
+          <ul id="project-controller">
+
           </ul>
         </section>
       </section>
@@ -72,6 +75,7 @@
       </div>
     </footer>
     <script src="scripts/jquery.js"></script>
+    <script src="scripts/handlebars.js"></script>
     <script src="scripts/projectData.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/view.js"></script>

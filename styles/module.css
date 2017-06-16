@@ -2,11 +2,7 @@
   position: absolute;
   right: 2%;
   top: 30%;
-  font-size: 2em;
-}
-
-.projects h3{
-  font-size:2em;
+  font-size: 6vw;
 }
 
 .project-lable{
@@ -39,10 +35,6 @@
   text-align: center;
   bottom: 1vw;
   color: white;
-}
-
-.about h3{
-  font-size: 2em;
 }
 
 .template{

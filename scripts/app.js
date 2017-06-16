@@ -11,12 +11,10 @@ function Proj(rawData){
 }
 
 Proj.prototype.toHtml = function(){
-  var $newProject = $('li.template').clone();
-  $newProject.removeClass('template');
-  $newProject.addClass('project-container');
-  $newProject.find('.screen-shot').attr('src', this.path);
-  $newProject.find('h4').html(this.name);
-  return $newProject;
+  var template = $('#project-template').html();
+  var templateRender = Handlebars.compile(template);
+
+  return templateRender(this);
 };
 
 rawData.forEach(function(raw){
@@ -24,5 +22,5 @@ rawData.forEach(function(raw){
 });
 
 projects.forEach(function(project){
-  $('.project-controller').append(project.toHtml());
+  $('#project-controller').append(project.toHtml());
 })
