@@ -1,23 +1,47 @@
 'use strict';
 
 var pageView = {};
+var $hero = $('.hero');
+var $currentAnimation;
 
 pageView.handleMainNav = function(){
   $('nav ul').on('click', 'li', function(){
     var $data = $(this).data('category');
-    $('.content').hide();
-    $('#' + $data).show();
+    if($data === 'home'){
+      $('.content').show();
+    }else{
+      $('.content').hide();
+      $('#' + $data).show();
+    }
   });
 }
 
 pageView.handleHero = function(){
-  var $hero = $('.hero');
   $hero.append(animations[0]);
+  $currentAnimation = $hero.children('.animation').data('index');
+  console.log($currentAnimation);
 }
 
 pageView.changeHero = function(){
-  var $hero = $('.hero');
-  var $arrow = $('.hero-arrow');
+  var $leftArrow = $('#left');
+  var $rightArrow = $('#right');
+  $rightArrow.on('click', function(){
+    $hero.html('');
+    if($currentAnimation === (animations.length - 1)){
+      $hero.append(animations[$currentAnimation = 0]);
+    }else{
+      $hero.append(animations[$currentAnimation += 1]);
+    }
+  });
+
+  $leftArrow.on('click', function(){
+    $hero.html('');
+    if($currentAnimation === 0){
+      $hero.append(animations[$currentAnimation = animations.length - 1]);
+    }else{
+      $hero.append(animations[$currentAnimation -= 1]);
+    }
+  });
 }
 
 $(document).ready(function(){

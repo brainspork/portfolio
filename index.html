@@ -12,24 +12,26 @@
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="icon" type="image/x-icon" href="img/x.png">
     <script id="project-template" type="text/x-handlebars-template">
-      <li class="project-container">
-        <img class="screen-shot" src="{{path}}">
+      <li class="project-container container">
         <div class="project-lable">
           <h4>{{name}}</h4>
+          <p class="description">{{info}}</p>
           <p>Read More</p>
         </div>
+        <img class="screen-shot" src="{{path}}">
       </li>
     </script>
   </head>
   <body>
+
     <header>
-      <div>
+      <div id="main-nav" class= 'container'>
         <img class="profile" src="img/ravenprof.jpg">
-        <h1>Anthony <span>Konschuh</span></h1>
+        <h1>Anthony Konschuh</h1>
         <nav>
           <span class="icon-menu"></span>
-          <ul>
-            <li><a class="menu" href="">Home</a></li>
+          <ul class="navigation">
+            <li data-category="home"><a class="menu" href="#">Home</a></li>
             <li data-category="projects"><a class="menu" href="#">Projects</a></li>
             <li data-category="about"><a class="menu" href="#">About</a></li>
             <li><a class="menu" href="https://github.com/brainspork">Github</a></li>
@@ -37,43 +39,48 @@
         </nav>
       </div>
     </header>
-    <main>
-      <section id="hero" class="content">
-        <section class="hero">
 
+    <main>
+      <section id="hero" class="content container">
+        <section class="hero">
+          <!-- animations go here -->
         </section>
-        <section class="change-animation">
+        <section class="change-animation container">
           <span class="hero-arrow" id="left"><p> < </p></span>
           <span class="hero-arrow" id="right"><p> > </p></span>
         </section>
       </section>
-      <section id="projects" class="content">
-        <section class="projects">
-          <h3>Projects</h3>
-          <ul id="project-controller">
 
+      <section id="projects" class="content container">
+        <h3>Projects</h3>
+        <section class="projects">
+          <ul id="project-controller">
+            <!--projects go here -->
           </ul>
+          <div class="clearfix"></div>
         </section>
       </section>
+
       <div class="clearfix"></div>
-      <section id="about" class="content">
-        <article class="about">
-          <h3>About</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </article>
+
+      <section id="about" class="content container">
+        <h3>About</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       </section>
     </main>
+
     <footer>
-      <div class="width-contain">
+      <div class="container">
         <p>&copy; firstlast.com</p>
-        <div class="link-contain">
+        <span class="link-contain">
           <a href=""><span class="icon-linkedin"></span></a>
           <a href="https://github.com/brainspork"><span class="icon-github"></span></a>
-        </div>
+        </span>
       </div>
     </footer>
+
     <script src="scripts/jquery.js"></script>
     <script src="scripts/handlebars.js"></script>
     <script src="scripts/projectData.js"></script>

@@ -80,3 +80,87 @@
     background:#00507F;
   }
 }
+
+/*circle animation*/
+#outer{
+  position:relative;
+  width:20vw;
+  height:20vw;
+  top:calc(50% - 10vw);
+  left:calc(50% - 10vw);
+  border-radius:50%;
+  animation: outer 1s infinite;
+}
+
+#circleone, #circletwo, #circlethree, #cirlcefour{
+  position:absolute;
+  display:inline-block;
+  height:2.5vw;
+  width:2.5vw;
+  border-radius:50%;
+  top:calc(50% - 1.25vw);
+  left:calc(50% - 1.25vw);
+}
+
+#circleone{
+  background:#C1FFA5;
+  animation: one 2s infinite;
+}
+
+#circletwo{
+  background:#C1FFA5;
+  animation: two 2s infinite;
+}
+
+#circlethree{
+  background:#26994A;
+  animation: three 2s infinite;
+}
+
+#cirlcefour{
+  background:#26994A;
+  animation: four 2s infinite;
+}
+
+@keyframes load{
+  25%{
+    transform:scale(2);
+  }
+  50%{
+    transform:scale(2);
+  }
+}
+
+@keyframes outer{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes one{
+  50%{
+    top: calc(50% - 1.25vw);
+    left: 0;
+  }
+}
+
+@keyframes two{
+  50%{
+    top: calc(50% - 1.25vw);
+    left: 17.5vw;
+  }
+}
+
+@keyframes three{
+  50%{
+    top:0;
+    left: calc(50% - 1.25vw);
+  }
+}
+
+@keyframes four{
+  50%{
+    top: 17.5vw;
+    left: calc(50% - 1.25vw);
+  }
+}
