@@ -23,8 +23,8 @@ p, h1, h3, h4, a, a:link{
   color: white;
 }
 
-h1, h3, h4, a, a:link{
-  font-size: 7.5vw;
+h1, h3, h4{
+  font-size: 7vw;
 }
 
 h3{
