@@ -32,17 +32,26 @@ h1{
   top: 7.5vw;
   right: 5vw;
   font-size: 10vw;
+  transition: 350ms all;
+}
+
+nav:hover .icon-menu{
+  transform: rotate(90deg);
 }
 
 nav:hover .navigation{
-  display: block;
+  height: 200vw;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 2vw;
+  transition: 350ms all;
+  z-index: 999999;
 }
 
 .navigation{
-  display: none;
   position: absolute;
   top: 25vw;
-  right: 5vw;
+  right: -200px;
   text-align: right;
 }
 
@@ -215,6 +224,11 @@ footer p{
 
   .icon-menu{
     display: none;
+  }
+
+  nav:hover .navigation{
+    background-color: rgba(0,0,0,0);
+    padding: 0;
   }
 
   .navigation{
