@@ -104,6 +104,7 @@ nav:hover .navigation{
   width: 50vw;
   height: 50vw;
   margin: 0 auto;
+  top: 4vw;
 }
 
 .project-container:hover .project-lable{
@@ -152,7 +153,7 @@ nav:hover .navigation{
 
 /*about layout*/
 #about{
-  margin-top: 5vw;
+  margin-top: 10vw;
 }
 
 #about p{
@@ -183,26 +184,93 @@ footer p{
   font-size: 5vw;
 }
 
-@media only screen and (min-width: 460px){
+@media only screen and (min-width: 640px){
   .container{
     max-width: 960px;
     margin: 0 auto;
   }
 
+  /*navigation layout*/
   #main-nav{
     max-height: 200px;
   }
 
   .profile{
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 200px;
+    max-height: 200px;
     top: 2.5vw;
     left: 0;
   }
 
   h1{
-    top: 100%;
-    left: 25%;
+    top: 115px;
+    left: 225px;
+    font-size: 3em;
+    width: 30%;
+  }
+
+  .icon-menu{
+    display: none;
+  }
+
+  .navigation{
+    display: block;
+    width: 40%;
+    top: 115px;
+    right: 0;
+  }
+
+  .navigation a{
+    font-size: 3vw;
+  }
+
+  .navigation a:hover{
+    color: #70B8AB;
+  }
+
+  /*hero*/
+  .hero-arrow:hover p{
+    color: #70B8AB;
+    cursor: pointer;
+  }
+
+  /*project layout*/
+  .project-container{
+    max-width: 320px;
+    max-height: 320px;
+  }
+
+  h3{
+    font-size: 4vw;
+  }
+
+  .project-lable h4{
+    font-size: 3vw;
+  }
+
+  .project-lable p{
+    font-size: 2vw;
+  }
+
+  /*about layout*/
+
+  #about p{
+    font-size: 2vw;
+    text-indent: 4vw;
+  }
+
+  /*footer layout*/
+
+  footer div{
+    max-height: 115px;
+  }
+
+  footer p{
+    top: 4vw;
+    font-size: 2vw;
+  }
+
+  .link-contain a{
     font-size: 4vw;
   }
 }

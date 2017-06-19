@@ -25,6 +25,6 @@ var rawData = [
 ];
 
 var animations = [
-  '<div id="backone" class="box-animation"><div id="ballone" class="box-animation"></div></div><div id="backtwo" class="box-animation"><div id="balltwo" class="box-animation"></div></div>',
-  '<p>works</p>'
+  '<div data-index="0" id="backone" class="box-animation animation"><div id="ballone" class="box-animation"></div></div><div id="backtwo" class="box-animation"><div id="balltwo" class="box-animation"></div></div>',
+  '<p data-index="1">works</p>', '<p data-index="2" >Works 2s</p>'
 ];
