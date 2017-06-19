@@ -35,14 +35,18 @@ h1{
 }
 
 nav:hover .navigation{
-  display: block;
+  height: 200vw;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 2vw;
+  transition: 350ms all;
+  z-index: 999999;
 }
 
 .navigation{
-  display: none;
   position: absolute;
   top: 25vw;
-  right: 5vw;
+  right: -500px;
   text-align: right;
 }
 
