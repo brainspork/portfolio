@@ -32,6 +32,11 @@ h1{
   top: 7.5vw;
   right: 5vw;
   font-size: 10vw;
+  transition: 350ms all;
+}
+
+nav:hover .icon-menu{
+  transform: rotate(90deg);
 }
 
 nav:hover .navigation{
@@ -46,7 +51,7 @@ nav:hover .navigation{
 .navigation{
   position: absolute;
   top: 25vw;
-  right: -500px;
+  right: -200px;
   text-align: right;
 }
 
@@ -219,6 +224,11 @@ footer p{
 
   .icon-menu{
     display: none;
+  }
+
+  nav:hover .navigation{
+    background-color: rgba(0,0,0,0);
+    padding: 0;
   }
 
   .navigation{
