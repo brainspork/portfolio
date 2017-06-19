@@ -95,6 +95,7 @@ nav:hover .navigation{
 .projects{
   width: 100%;
   height: 100%;
+  margin-bottom: 10px;
 }
 
 .project-container{
@@ -104,7 +105,6 @@ nav:hover .navigation{
   width: 50vw;
   height: 50vw;
   margin: 0 auto;
-  top: 4vw;
 }
 
 .project-container:hover .project-lable{
@@ -222,10 +222,13 @@ footer p{
 
   .navigation a{
     font-size: 3vw;
+    transition: 350ms all;
   }
 
   .navigation a:hover{
     color: #70B8AB;
+    font-size: 3.5vw;
+    margin-right: 1vw;
   }
 
   /*hero*/
