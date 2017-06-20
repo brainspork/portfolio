@@ -7,11 +7,15 @@ var $currentAnimation;
 pageView.handleMainNav = function(){
   $('nav ul').on('click', 'li', function(){
     var $data = $(this).data('category');
+    var $project = $('#project-display');
     if($data === 'home'){
-      $('.content').show();
+      $project.fadeOut();
+      $project.hide();
+      $('.content').fadeIn();
     }else{
-      $('.content').hide();
-      $('#' + $data).show();
+      $project.fadeOut();
+      $('.content').fadeOut();
+      $('#' + $data).fadeIn();
     }
   });
 }
@@ -43,6 +47,19 @@ pageView.changeHero = function(){
   });
 }
 
+pageView.handleProjectNav = function(){
+  var $project = $('.project-container');
+  $project.on('click', '.btn', function(){
+    var $name = $(this).siblings('h4').html();
+    var clicked = Proj.all.filter(function(pro){
+      return pro.name === $name;
+    });
+    $('.content').fadeOut();
+    $('#project-display').html(clicked[0].projToHtml()).fadeIn();
+    clicked = '';
+  });
+}
+
 pageView.htmlInit = function(){
   Proj.fetchData();
   Proj.all.forEach(function(project){
@@ -51,4 +68,5 @@ pageView.htmlInit = function(){
   pageView.handleMainNav();
   pageView.handleHero();
   pageView.changeHero();
+  pageView.handleProjectNav();
 };

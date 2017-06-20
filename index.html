@@ -16,11 +16,21 @@
       <li class="project-container container">
         <div class="project-lable">
           <h4>{{name}}</h4>
-          <p class="description">{{info}}</p>
-          <p>Read More</p>
+          <p class="description">{{blurb}}</p>
+          <p class="btn">Read More</p>
         </div>
         <img class="screen-shot" src="{{path}}">
       </li>
+    </script>
+    <script id="project-fullscreen" type="text/x-handlebars-template">
+      <h4>{{name}}</h4>
+      <span>{{date}}</span>
+      <div class="clearfix"></div>
+      <a href="{{url}}">{{url}}</a>
+      <div class="clearfix"></div>
+      <img src="{{path}}">
+      <p>{{info}}</p>
+      <div class="clearfix"></div>
     </script>
   </head>
   <body>
@@ -69,6 +79,10 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
+      </section>
+
+      <section id="project-display" class="content container">
+        <!-- project goes here -->
       </section>
     </main>
 

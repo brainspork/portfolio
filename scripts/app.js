@@ -6,12 +6,20 @@ function Proj(rawData){
   this.date = rawData.date;
   this.url = rawData.url;
   this.info = rawData.info;
+  this.blurb = this.info.substring(0, 125) + '...';
 }
 
 Proj.all = [];
 
 Proj.prototype.toHtml = function(){
   var template = $('#project-template').html();
+  var templateRender = Handlebars.compile(template);
+
+  return templateRender(this);
+};
+
+Proj.prototype.projToHtml = function(){
+  var template = $('#project-fullscreen').html();
   var templateRender = Handlebars.compile(template);
 
   return templateRender(this);
