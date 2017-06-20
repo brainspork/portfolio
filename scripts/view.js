@@ -7,11 +7,15 @@ var $currentAnimation;
 pageView.handleMainNav = function(){
   $('nav ul').on('click', 'li', function(){
     var $data = $(this).data('category');
+    var $project = $('#project-display');
     if($data === 'home'){
-      $('.content').show();
+      $project.fadeOut();
+      $project.hide();
+      $('.content').fadeIn();
     }else{
-      $('.content').hide();
-      $('#' + $data).show();
+      $project.fadeOut();
+      $('.content').fadeOut();
+      $('#' + $data).fadeIn();
     }
   });
 }
@@ -19,7 +23,6 @@ pageView.handleMainNav = function(){
 pageView.handleHero = function(){
   $hero.append(animations[0]);
   $currentAnimation = $hero.children('.animation').data('index');
-  console.log($currentAnimation);
 }
 
 pageView.changeHero = function(){
@@ -44,8 +47,26 @@ pageView.changeHero = function(){
   });
 }
 
-$(document).ready(function(){
+pageView.handleProjectNav = function(){
+  var $project = $('.project-container');
+  $project.on('click', '.btn', function(){
+    var $name = $(this).siblings('h4').html();
+    var clicked = Proj.all.filter(function(pro){
+      return pro.name === $name;
+    });
+    $('.content').fadeOut();
+    $('#project-display').html(clicked[0].projToHtml()).fadeIn();
+    clicked = '';
+  });
+}
+
+pageView.htmlInit = function(){
+  Proj.fetchData();
+  Proj.all.forEach(function(project){
+    $('#project-controller').append(project.toHtml());
+  });
   pageView.handleMainNav();
   pageView.handleHero();
   pageView.changeHero();
-});
+  pageView.handleProjectNav();
+};

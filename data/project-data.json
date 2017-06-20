@@ -1,0 +1,23 @@
+[
+  {
+    "img": "img/dunGen.png",
+    "name":"DunGen",
+    "date": "05-21-2017",
+    "url": "https://loaye.github.io/DunGen-Dragons/home/index.html",
+    "info": "A random character generator for Dungeons and Dragons. This web app gives the user three choices for character creation. We made a “Returning Players” option for experienced players who just want a blank character sheet, a “New Players” option for users who are just starting out, and a “Random” option for new and experienced players looking for a completely random experience. We populate a custom made, printable form with data generated from several simulated dice rolls and gives a visual representation of your stats using a chart.js radiograph."
+  },
+  {
+    "img": "img/busmall.png",
+    "name": "Bus Mall",
+    "date": "05-14-2017",
+    "url": "https://brainspork.github.io/busmall/",
+    "info": "A web app for an imaginary market research team that generates three random,  non-repeating images of “products” that our user can choose from. After the user has choosen 25 “products”, the images are removed and the user’s choices are displayed as ratios and as a chart.js bar-graph. The users choices and current number of products chosen are saved in localstorage so that the user can leave the page and return to the the same spot in the survey."
+  },
+  {
+    "img": "img/salmon.png",
+    "name": "Salmon Cookies",
+    "date": "05-07-2017",
+    "url": "https://brainspork.github.io/salmon_cookies/",
+    "info": "A static web page for an imaginary Seattle cookie company. Cookie sales are tracked in a table that totals hourly and daily sales for all stores. The company can add more store information to the table by using a form. After the new store is added the form updates to reflect the changes."
+  }
+]

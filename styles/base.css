@@ -20,6 +20,7 @@ footer{
 /*text styles*/
 
 p, h1, h3, h4, a, a:link{
+  font-family: 'spectral', times, serif;
   color: white;
 }
 
@@ -32,7 +33,7 @@ h3{
   border-bottom: .5vw solid white;
 }
 
-p{
+p, span{
   font-size: 5vw;
 }
 
