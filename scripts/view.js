@@ -19,7 +19,6 @@ pageView.handleMainNav = function(){
 pageView.handleHero = function(){
   $hero.append(animations[0]);
   $currentAnimation = $hero.children('.animation').data('index');
-  console.log($currentAnimation);
 }
 
 pageView.changeHero = function(){
@@ -44,8 +43,12 @@ pageView.changeHero = function(){
   });
 }
 
-$(document).ready(function(){
+pageView.htmlInit = function(){
+  Proj.fetchData();
+  Proj.all.forEach(function(project){
+    $('#project-controller').append(project.toHtml());
+  });
   pageView.handleMainNav();
   pageView.handleHero();
   pageView.changeHero();
-});
+};

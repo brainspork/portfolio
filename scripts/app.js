@@ -1,7 +1,5 @@
 'use strict';
 
-var projects = [];
-
 function Proj(rawData){
   this.path = rawData.img;
   this.name = rawData.name;
@@ -10,6 +8,8 @@ function Proj(rawData){
   this.info = rawData.info;
 }
 
+Proj.all = [];
+
 Proj.prototype.toHtml = function(){
   var template = $('#project-template').html();
   var templateRender = Handlebars.compile(template);
@@ -17,10 +17,22 @@ Proj.prototype.toHtml = function(){
   return templateRender(this);
 };
 
-rawData.forEach(function(raw){
-  projects.push(new Proj(raw));
-});
+Proj.loadData = function (raw){
+  raw.forEach (function(data){
+    Proj.all.push(new Proj(data));
+  });
+}
 
-projects.forEach(function(project){
-  $('#project-controller').append(project.toHtml());
-})
+Proj.fetchData = function(){
+  if(localStorage.projectData){
+    Proj.loadData(JSON.parse(localStorage.projectData));
+  }else{
+    $.getJSON('data/project-data.json')
+  .then(function(data){
+    localStorage.projectData = JSON.stringify(data);
+    Proj.loadData(data);
+  }, function(err){
+    console.log('There was an error', err);
+  });
+  }
+};

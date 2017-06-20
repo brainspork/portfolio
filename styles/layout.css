@@ -269,6 +269,10 @@ footer p{
     font-size: 3vw;
   }
 
+  .description{
+    top: 10vw;
+  }
+
   .project-lable p{
     font-size: 2vw;
   }
