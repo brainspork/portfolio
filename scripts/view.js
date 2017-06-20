@@ -9,11 +9,9 @@ pageView.handleMainNav = function(){
     var $data = $(this).data('category');
     var $project = $('#project-display');
     if($data === 'home'){
-      $project.fadeOut();
-      $project.hide();
       $('.content').fadeIn();
+      $project.hide();
     }else{
-      $project.fadeOut();
       $('.content').fadeOut();
       $('#' + $data).fadeIn();
     }
