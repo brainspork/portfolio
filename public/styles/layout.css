@@ -265,6 +265,10 @@ footer p{
   }
 
   /*hero*/
+  #hero{
+    margin-top: 18;
+  }
+
   .hero-arrow:hover p{
     color: #70B8AB;
     cursor: pointer;
