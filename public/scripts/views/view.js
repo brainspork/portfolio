@@ -7,20 +7,6 @@
   var $hero = $('.hero');
   var $currentAnimation;
 
-  pageView.handleMainNav = function(){
-    $('nav ul').on('click', 'li', function(){
-      var $data = $(this).data('category');
-      var $project = $('#project-display');
-      if($data === 'home'){
-        $('.content').fadeIn();
-        $project.hide();
-      }else{
-        $('.content').fadeOut();
-        $('#' + $data).fadeIn();
-      }
-    });
-  }
-
   pageView.handleHero = function(){
     $hero.append(animations[0]);
     $currentAnimation = $hero.children('.animation').data('index');
@@ -52,7 +38,7 @@
     var $project = $('.project-container');
     $project.on('click', '.btn', function(){
       var $name = $(this).siblings('h4').html();
-      var clicked = Proj.all.filter(function(pro){
+      var clicked = app.Proj.all.filter(function(pro){
         return pro.name === $name;
       });
       $('.content').fadeOut();
@@ -66,7 +52,6 @@
     app.Proj.all.forEach(function(project){
       $('#project-controller').append(project.toHtml());
     });
-    pageView.handleMainNav();
     pageView.handleHero();
     pageView.changeHero();
     pageView.handleProjectNav();
