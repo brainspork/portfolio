@@ -38,7 +38,7 @@
     var $project = $('.project-container');
     $project.on('click', '.btn', function(){
       var $name = $(this).siblings('h4').html();
-      var clicked = app.Proj.all.filter(function(pro){
+      var clicked = app.proj.all.filter(function(pro){
         return pro.name === $name;
       });
       $('.content').fadeOut();
@@ -47,11 +47,10 @@
     });
   }
 
+  var render = Handlebars.compile($('#project-template').text());
+
   pageView.htmlInit = function(){
-    app.Proj.fetchData();
-    app.Proj.all.forEach(function(project){
-      $('#project-controller').append(project.toHtml());
-    });
+    $('#project-controller').append(app.proj.all.map(render));
     pageView.handleHero();
     pageView.changeHero();
     pageView.handleProjectNav();

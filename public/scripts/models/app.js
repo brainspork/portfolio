@@ -2,50 +2,44 @@
 var app = app || {};
 
 (function(module){
-  function Proj(rawData){
-    this.path = rawData.img;
-    this.name = rawData.name;
-    this.date = rawData.date;
-    this.url = rawData.url;
-    this.info = rawData.info;
-    this.blurb = this.info.substring(0, 125) + '...';
-  }
+  const proj = {};
 
-  Proj.all = [];
+  proj.all = [];
 
-  Proj.prototype.toHtml = function(){
+  proj.toHtml = function(){
     var template = $('#project-template').html();
     var templateRender = Handlebars.compile(template);
 
     return templateRender(this);
   };
 
-  Proj.prototype.projToHtml = function(){
+  proj.projToHtml = function(){
     var template = $('#project-fullscreen').html();
     var templateRender = Handlebars.compile(template);
 
     return templateRender(this);
   };
 
-  Proj.loadData = function (raw){
-    raw.forEach (function(data){
-      Proj.all.push(new Proj(data));
+  proj.fetchData = (callback) =>{
+    $.ajax({
+      url: 'https://api.github.com/user/repos',
+      headers: token,
+      success: function(data, message){
+        console.log(message);
+        proj.all = data.filter(function(repo){return repo.description !== null})
+        .map(curr =>
+          ({
+            name: curr.name,
+            description: curr.description,
+            blurb: curr.description.substring(0, 125) + '...',
+            created: curr.created_at,
+            repo: curr.html_url
+          })
+        );
+        callback();
+      }
     });
   }
 
-  Proj.fetchData = function(){
-    if(localStorage.projectData){
-      Proj.loadData(JSON.parse(localStorage.projectData));
-    }else{
-      $.getJSON('data/project-data.json')
-    .then(function(data){
-      localStorage.projectData = JSON.stringify(data);
-      Proj.loadData(data);
-    }, function(err){
-      console.log('There was an error', err);
-    });
-    }
-  };
-
-  module.Proj = Proj;
+  module.proj = proj;
 })(app);
