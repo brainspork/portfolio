@@ -5,7 +5,7 @@ var app = app || {};
   const homeController = {};
 
   homeController.load = () => {
-    app.pageView.htmlInit();
+    app.proj.fetchData(app.pageView.htmlInit);
   }
 
   homeController.goHome = () => {

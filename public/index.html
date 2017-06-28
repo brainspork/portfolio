@@ -19,17 +19,17 @@
           <p class="description">{{blurb}}</p>
           <p class="btn">Read More</p>
         </div>
-        <img class="screen-shot" src="{{path}}">
+        <!-- <img class="screen-shot" src="{{path}}"> -->
       </li>
     </script>
     <script id="project-fullscreen" type="text/x-handlebars-template">
       <h4>{{name}}</h4>
-      <span>{{date}}</span>
+      <span>{{created_at}}</span>
       <div class="clearfix"></div>
-      <a href="{{url}}">{{url}}</a>
+      <a href="{{repo}}">{{repo}}</a>
       <div class="clearfix"></div>
       <img src="{{path}}">
-      <p>{{info}}</p>
+      <p>{{description}}</p>
       <div class="clearfix"></div>
     </script>
   </head>
@@ -96,14 +96,15 @@
       </div>
     </footer>
 
-    <script src="vendor/scripts/jquery.js"></script>
-    <script src="vendor/scripts/handlebars.js"></script>
-    <script src="vendor/scripts/page.js"></script>
-    <script src="data/projectData.js"></script>
-    <script src="scripts/models/app.js"></script>
-    <script src="scripts/views/view.js"></script>
-    <script src="scripts/controllers/home-controller.js"></script>
-    <script src="scripts/controllers/project-controller.js"></script>
-    <script src="scripts/controllers/routes.js"></script>
+    <script src="/vendor/scripts/jquery.js"></script>
+    <script src="/vendor/scripts/handlebars.js"></script>
+    <script src="/vendor/scripts/page.js"></script>
+    <script src="/data/projectData.js"></script>
+    <script src="/scripts/models/githubToken.js"></script>
+    <script src="/scripts/models/app.js"></script>
+    <script src="/scripts/views/view.js"></script>
+    <script src="/scripts/controllers/home-controller.js"></script>
+    <script src="/scripts/controllers/project-controller.js"></script>
+    <script src="/scripts/controllers/routes.js"></script>
   </body>
 </html>
