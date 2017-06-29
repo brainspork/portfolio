@@ -6,13 +6,6 @@ var app = app || {};
 
   proj.all = [];
 
-  proj.toHtml = function(){
-    var template = $('#project-template').html();
-    var templateRender = Handlebars.compile(template);
-
-    return templateRender(this);
-  };
-
   proj.projToHtml = function(){
     var template = $('#project-fullscreen').html();
     var templateRender = Handlebars.compile(template);
@@ -22,8 +15,7 @@ var app = app || {};
 
   proj.fetchData = (callback) =>{
     $.ajax({
-      url: 'https://api.github.com/user/repos',
-      headers: token,
+      url: '/github/user/repos',
       success: function(data, message){
         console.log(message);
         proj.all = data.filter(function(repo){return repo.description !== null})
