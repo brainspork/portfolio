@@ -34,26 +34,12 @@
     });
   }
 
-  pageView.handleProjectNav = function(){
-    var $project = $('.project-container');
-    $project.on('click', '.btn', function(){
-      var $name = $(this).siblings('h4').html();
-      var clicked = app.proj.all.filter(function(pro){
-        return pro.name === $name;
-      });
-      $('.content').fadeOut();
-      $('#project-display').html(clicked[0].projToHtml()).fadeIn();
-      clicked = '';
-    });
-  }
-
   var render = Handlebars.compile($('#project-template').text());
 
   pageView.htmlInit = function(){
     $('#project-controller').append(app.proj.all.map(render));
     pageView.handleHero();
     pageView.changeHero();
-    pageView.handleProjectNav();
   };
 
   module.pageView = pageView;
