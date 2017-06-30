@@ -15,8 +15,7 @@ var app = app || {};
 
   proj.fetchData = (callback) =>{
     $.ajax({
-      url: 'https://api.github.com/user/repos',
-      headers: {Authorization : 'token bb5fbe235ab659396d986e032cf5c4188480e5e5'},
+      url: '/github/user/repos',
       success: function(data, message){
         console.log(message);
         proj.all = data.filter(function(repo){return repo.description !== null})
